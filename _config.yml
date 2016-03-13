@@ -2,7 +2,7 @@
 title:       Eelco Lempsink
 email:       eelco@lempsink.nl
 author:      Eelco Lempsink
-description: "A simple, beautiful theme for Jekyll that emphasizes content rather than aesthetic fluff."
+description: "Personal site of Eelco Lempsink"
 baseurl:     ""
 url:         "http://eelco.io"
 date_format: "%b %-d, %Y"
