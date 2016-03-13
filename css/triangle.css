@@ -1,0 +1,224 @@
+#triangle {
+    /* Subviews use ems, use this to control size */
+    font-size: 10px;
+    width: 70px;
+    height: 70px;
+    margin: auto;
+    padding-left: 20px;
+    margin-top: -20px;
+}
+@media screen and (min-width: 32em) {
+  #triangle {
+    padding-left: 0;
+    float: left;
+  }
+}
+.part {
+    height: 100%;
+    width: 100%;
+}
+.part:nth-child(2) {
+    margin-top: -100%;
+}
+.plane {
+    width: 1em;
+    height: 1em;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+
+    transform-style: preserve-3d;
+    transform: translateY(1em) translateX(-1.77em) rotateX(54.73561deg) rotateZ(45deg);
+}
+#triangle.twisted .part:nth-child(1) .plane {
+    transform: translateY(1em) translateX(-1.77em) rotateX(54.73561deg) rotateZ(36deg);
+}
+.cube {
+    position: absolute;
+    width: 1em;
+    height: 1em;
+    transform-style: preserve-3d;
+}
+.face {
+    position: absolute;
+    transform-style: preserve-3d;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: white;
+    border: 1px solid black;
+}
+
+/* Rotate to make a cube */
+.x {
+  transform: rotateX(90deg) rotateY(180deg) translateZ(0.5em);
+}
+.y {
+  transform: rotateY(90deg) translateZ(0.5em);
+}
+.z {
+  transform: translateZ(0.5em);
+}
+/* Filter double borders */
+.y.face {
+  border-bottom-width: 0;
+}
+.z.face {
+  border-bottom-width: 0;
+  border-right-width: 0;
+}
+/* Layout cubes */
+.cube:nth-child(2) {
+  transform: translateZ(-1em);
+}
+.cube:nth-child(3) {
+  transform: translateZ(-2em);
+}
+.cube:nth-child(4) {
+  transform: translateZ(-3em);
+}
+.cube:nth-child(5) {
+  transform: translateZ(-4em);
+}
+.cube:nth-child(6) {
+  transform: translateZ(-5em);
+}
+.cube:nth-child(7) {
+  transform: translateZ(-5em) translateY(-1em);
+}
+.cube:nth-child(8) {
+  transform: translateZ(-5em) translateY(-2em);
+}
+.cube:nth-child(9) {
+  transform: translateZ(-5em) translateY(-3em);
+}
+.cube:nth-child(10) {
+  transform: translateZ(-5em) translateY(-4em);
+}
+.cube:nth-child(11) {
+  transform: translateZ(-5em) translateY(-5em);
+}
+.cube:nth-child(12) {
+  transform: translateZ(-5em) translateY(-5em) translateX(-1em);
+}
+.cube:nth-child(13) {
+  transform: translateZ(-5em) translateY(-5em) translateX(-2em);
+}
+.cube:nth-child(14) {
+  transform: translateZ(-5em) translateY(-5em) translateX(-3em);
+}
+.cube:nth-child(15) {
+  transform: translateZ(-5em) translateY(-5em) translateX(-4em);
+}
+
+/* Overlap */
+.part:nth-child(2) .cube:nth-child(1) {
+  transform: translateX(-6em) translateY(-6em) translateZ(-6em);
+}
+#triangle.twisted .part:nth-child(2) .cube:nth-child(1) {
+  transform: translateX(-6em) translateY(-6em) translateZ(-6em) rotateZ(-9deg);
+}
+.part:nth-child(2) .cube:nth-child(2) {
+  transform: translateX(-6em) translateY(-6em) translateZ(-7em);
+}
+#triangle.twisted .part:nth-child(2) .cube:nth-child(2) {
+  transform: translateX(-6em) translateY(-6em) translateZ(-7em) rotateZ(-9deg);
+}
+.part:nth-child(2) .cube:nth-child(3) {
+  transform: translateX(-6em) translateY(-6em) translateZ(-8em);
+}
+#triangle.twisted .part:nth-child(2) .cube:nth-child(3) {
+  transform: translateX(-6em) translateY(-6em) translateZ(-8em) rotateZ(-9deg);
+}
+
+/* Filter overlapping borders */
+.left-top .x.face {
+  border-top-width: 0;
+  border-left-width: 0;
+}
+.left-top .y.face {
+  border-right-width: 0;
+  border-left-width: 0; /* Needed for hairline */
+}
+.cube:nth-child(2) .y.face {
+  border-top-width: 0px; /* Needed for hairline through top leg */
+}
+.left .x.face {
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+.left .y.face {
+  border-left-width: 0;
+  border-right-width: 0;
+}
+.left-bottom .x.face {
+  border-bottom-width: 0;
+}
+.left-bottom .y.face {
+  border-left-width: 0;
+  border-top-width: 0;
+}
+.cube:nth-child(7) .z.face {
+  border-left-width: 0; /* Needed for hairline poking through left leg */
+}
+.bottom .y.face {
+  border-top-width: 0;
+}
+.bottom .z.face {
+  border-top-width: 0;
+}
+.bottom-top .x.face {
+  /* Needed for hairlines caused by cube 11 */
+  border-left-width: 0;
+  border-bottom-width: 0;
+}
+.bottom-top .z.face {
+  border-left-width: 0;
+}
+.cube:nth-child(12) .x.face {
+  border-top-width: 0; /* Needed for hairline poking through bottom leg */
+}
+.top .x.face {
+  border-right-width: 0;
+  border-left-width: 0;
+}
+.top .z.face {
+  border-left-width: 0;
+}
+
+/* Animated borders */
+#triangle.twisted .left-top .y.face {
+  border-left-width: 1px;
+}
+#triangle.twisted .cube:nth-child(15) .x.face {
+  border-right-width: 1px;
+}
+#triangle.twisted .cube:nth-child(15) .z.face {
+  border-left-width: 1px;
+}
+#triangle.twisted .cube:nth-child(12) .x.face {
+  border-top-width: 1px; /* Hidden hairline by default */
+}
+
+/* Transition defaults */
+.cube, .plane {
+    transition: transform 1s ease-in-out;
+}
+#triangle.twisted .face {
+    transition: border 0.1s ease-in-out;
+}
+.face {
+    transition-delay: 0.9s;
+}
+/* Special case for hiding hairline during connected state */
+#triangle.twisted .cube:nth-child(12) .x.face {
+  transition-delay: 0.1s;
+}
+.cube:nth-child(12) .x.face {
+  transition-delay: 0.8s;
+}
+/* When ‘pulling’ */
+#triangle.pulling * {
+    transition-delay: 0s;
+    transition-duration: 0s;
+}
