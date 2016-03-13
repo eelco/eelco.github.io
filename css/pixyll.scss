@@ -33,3 +33,9 @@
 @import 'gists';
 @import 'measure';
 @import 'pagination';
+
+.avatar {
+  margin: 0 1rem 1rem 0;
+  width: 100px;
+  border-radius: 50%;
+}
