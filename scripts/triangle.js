@@ -6,8 +6,8 @@ addEventListener("load", function(event) {
     var triangle = document.getElementById("triangle");
     var planes = triangle.getElementsByClassName("plane");
 
-    var waitForTransition = [].slice.call(planes[1].getElementsByClassName("cube"))
-    waitForTransition.push(planes[0])
+    var waitForTransition = [].slice.call(planes[0].getElementsByClassName("cube"))
+    waitForTransition.push(planes[1])
 
     var twistElements = []
 

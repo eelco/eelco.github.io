@@ -30,7 +30,7 @@
     transform-style: preserve-3d;
     transform: translateY(1em) translateX(-1.77em) rotateX(54.73561deg) rotateZ(45deg);
 }
-#triangle.twisted .part:nth-child(1) .plane {
+#triangle.twisted .part:nth-child(2) .plane {
     transform: translateY(1em) translateX(-1.77em) rotateX(54.73561deg) rotateZ(36deg);
 }
 .cube {
@@ -112,22 +112,22 @@
 }
 
 /* Overlap */
-.part:nth-child(2) .cube:nth-child(1) {
+.part:nth-child(1) .cube:nth-child(1) {
   transform: translateX(-6em) translateY(-6em) translateZ(-6em);
 }
-#triangle.twisted .part:nth-child(2) .cube:nth-child(1) {
+#triangle.twisted .part:nth-child(1) .cube:nth-child(1) {
   transform: translateX(-6em) translateY(-6em) translateZ(-6em) rotateZ(-9deg);
 }
-.part:nth-child(2) .cube:nth-child(2) {
+.part:nth-child(1) .cube:nth-child(2) {
   transform: translateX(-6em) translateY(-6em) translateZ(-7em);
 }
-#triangle.twisted .part:nth-child(2) .cube:nth-child(2) {
+#triangle.twisted .part:nth-child(1) .cube:nth-child(2) {
   transform: translateX(-6em) translateY(-6em) translateZ(-7em) rotateZ(-9deg);
 }
-.part:nth-child(2) .cube:nth-child(3) {
+.part:nth-child(1) .cube:nth-child(3) {
   transform: translateX(-6em) translateY(-6em) translateZ(-8em);
 }
-#triangle.twisted .part:nth-child(2) .cube:nth-child(3) {
+#triangle.twisted .part:nth-child(1) .cube:nth-child(3) {
   transform: translateX(-6em) translateY(-6em) translateZ(-8em) rotateZ(-9deg);
 }
 
